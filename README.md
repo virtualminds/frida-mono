@@ -1,10 +1,13 @@
 ### How to compile & load
 
 ```sh
-$ git clone git://github.com/oleavr/frida-agent-example.git
-$ cd frida-agent-example/
+$ git clone -b USEWITHCARE git://github.com/virtualminds/frida-mono.git
+$ cd frida-mono/
+
+(EDIT FILE agent/index.js)
+
 $ npm install
-$ frida -U -f com.example.android --no-pause -l _agent.js
+$ frida -U -f <MONO FILE.exe> --no-pause -l _agent.js
 ```
 
 ### Development workflow
@@ -17,3 +20,9 @@ $ npm run watch
 
 And use an editor like Visual Studio Code for code completion and instant
 type-checking feedback.
+
+### Notes
+
+Actually is under development, this is just the code with lot of things to 
+improve. It should work with mono android with a minimun chage on runtime.js 
+(change the library name from mono-sgen to libmonosgen-2.0.so)
